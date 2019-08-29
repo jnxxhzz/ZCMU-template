@@ -20,9 +20,9 @@ void RMQ() //预处理序列
 			Min[i][j]=min(Min[i][j-1],Min[i+p][j-1]);
 		}
 }
-int q(int i,int j) //询问 i~j 区间中的极值 
+LL query(int i,int j) //询问 i~j 区间中的极值 
 {
-	int p=(int)log2(j-i+1.0);
+	int k=(int)log2(j-i+1.0);
 	int mx=max(Max[i][k],Max[j-(1<<k)+1][k]);
 	int mi=min(Min[i][k],Min[j-(1<<k)+1][k]);
 	return mx; //区间最大值 
